@@ -12,17 +12,17 @@ most of hyperparameters setting is in the code.
 
 --------
 usage:
-db preprocess:
+db preprocess:  
 `
 python db_merge.py --input_file unfilecgdata.csv --outputfile ./YOUR_PATH/NAME
 `
 
-db train+test:
+db train+test:  
 `
 python db_train.py --train_file db_1_50_400_train.csv --test_file db_1_50_400_test.csv
 `
 
-acer train+test:
+acer train+test:  
 `
 python acer_train.py --train_file 0628_train.csv --test_file 0628_test.csv
 `
