@@ -2,7 +2,7 @@
 
 * the codes are not arranged yet, just for refer.
 * these are for NTU 2019Fall ADL final project.
-* tyu have to install tensorboardX
+* you have to install tensorboardX
 
 db data: from ECG-ID Database (physionet)
 
