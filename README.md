@@ -24,5 +24,5 @@ python db_train.py --train_file db_1_50_400_train.csv --test_file db_1_50_400_te
 
 acer train+test:  
 `
-python acer_train.py --train_file 0628_train.csv --test_file 0628_test.csv
+python acer_train.py --train_file acer_train.csv --test_file acer_test.csv
 `
