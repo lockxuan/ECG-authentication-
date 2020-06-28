@@ -15,7 +15,7 @@ from sklearn.metrics import confusion_matrix, f1_score
 
 from argparse import ArgumentParser
 
-from acer_model import ECGmodel, ResNet, BasicBlock, Bottleneck, NewModel,TinyModel,TinyLSTMModel,pretrainedResNet,LSTMModel
+from acer_model import threelayersCNN, ResNet, BasicBlock, Bottleneck, sixlayersCNN,ChannelAttModel,CNNLSTMModel,pretrainedResNet,LSTMModel
 from acer_utils import draw,Loader,readData
 
 from tensorboardX import SummaryWriter
@@ -44,10 +44,10 @@ def get_parameter_number(net):
 
 def main(args):
 	device = torch.device('cuda:0' if torch.cuda.is_available() else 'cpu')
-	#cnn = ECGmodel(_fft = args.fft).to(device)
-	#cnn = NewModel().to(device)
-	#cnn = TinyLSTMModel().to(device)
-	cnn = TinyModel().to(device)
+	#cnn = threelayersCNN(_fft = args.fft).to(device)
+	#cnn = sixlayersCNN().to(device)
+	#cnn = CNNLSTMModel().to(device)
+	cnn = ChannelAttModel().to(device)
 	#cnn = LSTMModel().to(device)
 	#cnn = pretrainedResNet().to(device)
 	#cnn = ResNet(Bottleneck, [1, 1, 1, 1]).to(device)

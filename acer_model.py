@@ -67,9 +67,9 @@ class Spatial(nn.Module):
         #x = self.sigmoid(x)
         return out * x
 
-class ECGmodel(nn.Module):
+class threelayersCNN(nn.Module):
 	def __init__(self, _fft=False):
-		super(ECGmodel, self).__init__()
+		super(threelayersCNN, self).__init__()
 		self.fft = _fft
 
 		self.conv1 = nn.Sequential(
@@ -99,27 +99,12 @@ class ECGmodel(nn.Module):
 			nn.Tanh(),
 			nn.Linear(128,numOfPeople),
 			)
-		"""
-		self.out2 = nn.Sequential(
-			nn.Linear(256,128),
-			nn.Tanh(),
-			nn.Linear(128,numOfPeople),
-			)
-		"""
+
 
 
 	def forward(self, x):
-		#x = self.norm(x)
-		#x = self.norm2(x)
 
 		x = self.conv1(x)
-		#a = self.conv2(x)
-		#print(x.size()) batch 64 / Width 25 / Channel 128 / (h=1)
-		#m = self.max_pool(x)
-		#a = self.avg_pool(x)
-
-		#x = torch.cat((m, a), dim=1)
-
 
 
 		x = torch.reshape(x, (x.size()[0],-1))
@@ -276,9 +261,9 @@ class pretrainedResNet(nn.Module):
 		
 
 
-class NewModel(nn.Module):
+class sixlayersCNN(nn.Module):
 	def __init__(self):
-		super(NewModel, self).__init__()
+		super(sixlayersCNN, self).__init__()
 
 		self.conv1 = nn.Sequential(
 			nn.Conv1d(1, 32, kernel_size=3 ,padding=1, stride=1),
@@ -363,9 +348,9 @@ class LSTMModel(nn.Module):
 		x = self.fc(x)
 		return x
 
-class TinyLSTMModel(nn.Module):
+class CNNLSTMModel(nn.Module):
 	def __init__(self):
-		super(TinyLSTMModel, self).__init__()
+		super(CNNLSTMModel, self).__init__()
 		
 		self.conv1 = nn.Sequential(
 			nn.Conv1d(1, 32, kernel_size=3 ,padding=1, stride=1),
@@ -405,9 +390,9 @@ class TinyLSTMModel(nn.Module):
 		return x
 		
 
-class TinyModel(nn.Module):
+class ChannelAttModel(nn.Module):
 	def __init__(self):
-		super(TinyModel, self).__init__()
+		super(ChannelAttModel, self).__init__()
 
 		self.conv1 = nn.Sequential(
 			nn.Conv1d(1, 32, kernel_size=3 ,padding=1, stride=1),
