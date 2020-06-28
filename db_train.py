@@ -44,11 +44,11 @@ def get_parameter_number(net):
 
 def main(args):
 	device = torch.device('cuda:0' if torch.cuda.is_available() else 'cpu')
-	#cnn = ECGmodel(_fft = args.fft).to(device)
-	#cnn = NewModel().to(device)
-	#cnn = TinyLSTMModel().to(device)
-	#cnn = TinyModel().to(device)
-	cnn = LSTMModel().to(device)
+	#cnn = threelayersCNN(_fft = args.fft).to(device)
+	#cnn = sixlayersCNN().to(device)
+	#cnn = CNNLSTMModel().to(device)
+	cnn = ChannelAttModel().to(device)
+	#cnn = LSTMModel().to(device)
 	#cnn = pretrainedResNet().to(device)
 	#cnn = ResNet(Bottleneck, [1, 1, 1, 1]).to(device)
 	print(cnn)
