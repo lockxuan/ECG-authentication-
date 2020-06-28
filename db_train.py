@@ -15,7 +15,7 @@ from sklearn.metrics import confusion_matrix, f1_score
 
 from argparse import ArgumentParser
 
-from db_model import ECGmodel, ResNet, BasicBlock, Bottleneck, NewModel,TinyModel,TinyLSTMModel,pretrainedResNet,LSTMModel
+from db_model import threelayersCNN, ResNet, BasicBlock, Bottleneck, sixlayersCNN,ChannelAttModel,CNNLSTMModel,pretrainedResNet,LSTMModel
 from db_utils import draw,Loader,readData
 
 from tensorboardX import SummaryWriter
